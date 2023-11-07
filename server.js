@@ -4,11 +4,13 @@ const bodyParser = require("body-parser")
 const sendEmail = require("./Utilits/sendEmail")
 const cors = require("cors")
 
-
+const corsOptions = {
+  origin: 'https://harrycolyer.github.io/pp-frontend/',
+};
 const app = express();
 
 // Serve the built frontend files from the 'build' directory and Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
