@@ -14,11 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-// Your backend API routes
-app.get('/', async (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
-})
-
 app.post("/api/contact", async (req, res) => {
   const {company, email, subject, message} = req.body
   try {
